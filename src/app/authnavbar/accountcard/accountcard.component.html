@@ -1,0 +1,27 @@
+<div class="card-container">
+
+<div class="card">
+  <div class="avatar-holder">
+    <img src="https://th.bing.com/th/id/OIP.-pMBRAEV0I8oNPHctpponAHaHa?pid=ImgDet&w=828&h=828&rs=1" alt="{{ users.firstName }}">
+  </div>
+  <div class="name">
+    <a href="#" target="_blank">{{ users.firstName }} {{ users.lastName }}</a>
+    <h6 title="Email">{{ users.emailAddress }}</h6>
+    <h6 title="Status">{{ users.status }}</h6>
+  </div>
+</div>
+
+<div class="phone-numbers">
+  <h6 title="Phone Numbers">Phone Numbers:</h6>
+  <table>
+  
+    <tbody>
+      <span *ngFor="let simData of users.userSimDetails">
+        <div *ngFor="let phoneNumber of simData.simData">
+        <tr>  {{ phoneNumber.phonenumber }} </tr>
+        </div>
+      </span>
+    </tbody>
+  </table>
+</div>
+</div>
